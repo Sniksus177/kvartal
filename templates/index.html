@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЖК «Новый квартал»</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="header">
+    <a class="logo" href="/">НОВЫЙ КВАРТАЛ</a>
+    <nav>
+        <a href="#about">О проекте</a>
+        <a href="#advantages">Преимущества</a>
+        <a href="#apartments">Квартиры</a>
+        <a href="#contacts">Контакты</a>
+        {% if user %}
+        <a href="/profile">Личный кабинет</a>
+        {% else %}
+        <a href="/user/login">Войти</a>
+        <a href="/register">Регистрация</a>
+        {% endif %}
+    </nav>
+</header>
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Жилой комплекс «Новый квартал»</h1>
+            <p>Современное пространство для жизни, отдыха и общения.</p>
+            <a class="button" href="#contacts">Оставить заявку</a>
+        </div>
+    </section>
+    <section class="section" id="about">
+        <h2>О жилом комплексе</h2>
+        <p>«Новый квартал» — проект жилого комплекса с удобными квартирами,
+        благоустроенной территорией и местами для отдыха жителей.</p>
+        <div class="facts">
+            <div class="fact"><b>5</b><span>жилых корпусов</span></div>
+            </div>
+        <div class="facts">
+            <div class="fact"><b>12</b><span>этажей в корпусах</span></div>
+        </div>
+    </section>
+    <section class="section light" id="advantages">
+        <h2>Преимущества</h2>
+        <div class="cards">
+            <article class="card"><h3>Безопасность</h3><p>Освещённые дворы и видеонаблюдение.</p></article>
+            </div>
+            <div class="cards">
+            <article class="card"><h3>Отдых</h3><p>Детские площадки и места для прогулок.</p></article>
+                </div>
+                <div class="cards">
+            <article class="card"><h3>Удобство</h3><p>Парковка, магазины и транспорт рядом.</p></article>
+                </div>
+    </section>
+    <section class="section" id="apartments">
+        <h2>Варианты квартир</h2>
+        <div class="cards">
+            <article class="card"><h3>Студия</h3><p>Небольшая квартира для одного человека или пары.</p></article>
+            <article class="card"><h3>Однокомнатная</h3><p>Отдельная комната и кухня.</p></article>
+            <article class="card"><h3>Двухкомнатная</h3><p>Больше места для семьи.</p></article>
+        </div>
+    </section>
+    <section class="section light">
+        <h2>Для жителей</h2>
+        <div class="cards">
+            <article class="card"><h3>Детям</h3><p>Игровая зона и безопасный двор.</p></article>
+            <article class="card"><h3>Общение</h3><p>Места для встреч и мероприятий.</p></article>
+            <article class="card"><h3>Спорт</h3><p>Площадка для занятий на свежем воздухе.</p></article>
+        </div>
+    </section>
+    <section class="section" id="contacts">
+        <h2>Оставить заявку</h2>
+        <p>Оставьте контакты, чтобы получить дополнительную информацию.</p>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="message">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <form class="contact-form" action="/send" method="post">
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="tel" name="phone" placeholder="Номер телефона" required>
+            <textarea name="comment" placeholder="Комментарий"></textarea>
+            <button class="button" type="submit">Отправить</button>
+        </form>
+    </section>
+</main>
+<footer>
+    <b>ЖК «Новый квартал»</b>
+</footer>
+</body>
+</html>

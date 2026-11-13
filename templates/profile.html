@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="header">
+    <a class="logo" href="/">НОВЫЙ КВАРТАЛ</a>
+    <nav><a href="/">На главную</a><a href="/user/logout">Выйти</a></nav>
+</header>
+<main class="section">
+    <div class="login-box">
+        <h1>Личный кабинет</h1>
+        <p>Здравствуйте, {{ user.name }}!</p>
+        <p>Ваша электронная почта: {{ user.email }}</p>
+        <a class="button" href="/#contacts">Оставить заявку</a>
+    </div>
+</main>
+</body>
+</html>

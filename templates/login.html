@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход администратора</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="header">
+    <a class="logo" href="/">НОВЫЙ КВАРТАЛ</a>
+    <a href="/">На главную</a>
+</header>
+<main class="section">
+    <div class="login-box">
+        <h1>Вход администратора</h1>
+        <p>Введите данные для просмотра заявок.</p>
+        {% if error %}
+            <div class="message error">{{ error }}</div>
+        {% endif %}
+        <form class="contact-form" action="/login" method="post">
+            <input type="text" name="username" placeholder="Логин" autocomplete="username" required>
+            <input type="password" name="password" placeholder="Пароль" autocomplete="current-password" required>
+            <button class="button" type="submit">Войти</button>
+        </form>
+    </div>
+</main>
+</body>
+</html>

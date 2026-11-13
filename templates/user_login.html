@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="header">
+    <a class="logo" href="/">НОВЫЙ КВАРТАЛ</a>
+    <nav><a href="/">На главную</a><a href="/register">Регистрация</a></nav>
+</header>
+<main class="section">
+    <div class="login-box">
+        <h1>Вход в аккаунт</h1>
+        <p>Введите почту и пароль, указанные при регистрации.</p>
+        {% if error %}<div class="message error">{{ error }}</div>{% endif %}
+        <form class="contact-form" action="/user/login" method="post">
+            <input type="email" name="email" placeholder="Электронная почта" autocomplete="email" required>
+            <input type="password" name="password" placeholder="Пароль" autocomplete="current-password" required>
+            <button class="button" type="submit">Войти</button>
+        </form>
+    </div>
+</main>
+</body>
+</html>
